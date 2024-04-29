@@ -30,6 +30,7 @@ public class Restart : MonoBehaviour
         Controller_Player._Player.missiles = false;
         Controller_Player._Player.laserOn = false;
         Controller_Player._Player.forceField = false;
+        Controller_Player._Player.smallPlayer = false;
         Controller_Player._Player.speed = 10;
         Controller_Player._Player.powerUpCount = 0;
     }

@@ -43,11 +43,21 @@ public class Controller_Instantiator : MonoBehaviour
         {
             float offsetX = instantiatePos.transform.position.x;
             int rnd = UnityEngine.Random.Range(0, enemies.Count);
-            for (int i = 0; i < 5; i++)
+            if(rnd == 3)
             {
-                offsetX = offsetX + 4;
+                offsetX = offsetX + 1;
                 Vector3 transform = new Vector3(offsetX, instantiatePos.transform.position.y, instantiatePos.transform.position.z);
-                Instantiate(enemies[rnd], transform,Quaternion.identity);
+                Instantiate(enemies[3], transform, Quaternion.identity);
+            }
+            else
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    offsetX = offsetX + 4;
+                    Vector3 transform = new Vector3(offsetX, instantiatePos.transform.position.y, instantiatePos.transform.position.z);
+                    Instantiate(enemies[rnd], transform, Quaternion.identity);
+                }
+
             }
             timer = 7;
         }

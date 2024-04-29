@@ -23,6 +23,8 @@ public class Controller_Player : MonoBehaviour
     internal bool forceField;
     internal bool laserOn;
 
+    internal bool smallPlayer;
+
     public static bool lastKeyUp;
 
     public delegate void Shooting();
@@ -67,6 +69,7 @@ public class Controller_Player : MonoBehaviour
         missiles = false;
         laserOn = false;
         forceField = false;
+        smallPlayer = false;
         options = new List<Controller_Option>();
         
 }
@@ -179,9 +182,14 @@ public class Controller_Player : MonoBehaviour
             {
                 OptionListing();
             }
-            else if (powerUpCount >= 6)
+            else if (powerUpCount == 6)
             {
                 forceField = true;
+                powerUpCount = 0;
+            }
+            else if (powerUpCount >= 7)
+            {
+                AddAnotherPowerUp();
                 powerUpCount = 0;
             }
         }
@@ -253,6 +261,17 @@ public class Controller_Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             powerUpCount++;
+        }
+    }
+
+    private void AddAnotherPowerUp()
+    {
+        smallPlayer = true;
+
+        if(smallPlayer == true)
+        {
+            rb.transform.localScale = new Vector3(rb.transform.localScale.x / 2f,
+                rb.transform.localScale.y / 2f, rb.transform.localScale.z);
         }
     }
 }
