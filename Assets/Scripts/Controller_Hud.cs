@@ -66,6 +66,7 @@ public class Controller_Hud : MonoBehaviour
             }
             else if (player.powerUpCount >= 7)
             {
+                //Nuevo Power Up en le Hud.
                 powerUpText.text = "PowerUp: Small Player";
             }
         }

@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class CircleEnemy : Controller_Enemy
 {
 
+    //Nuevo enemigo, la idea es que dispare de manera circular, tengo que corregir eso.
+
     private GameObject player;
 
     private Rigidbody rb;

@@ -23,6 +23,7 @@ public class Controller_Player : MonoBehaviour
     internal bool forceField;
     internal bool laserOn;
 
+    //Nueva variable para el nuevo Power Up.
     internal bool smallPlayer;
 
     public static bool lastKeyUp;
@@ -189,6 +190,7 @@ public class Controller_Player : MonoBehaviour
             }
             else if (powerUpCount >= 7)
             {
+                //Nuevo Power Up.
                 AddAnotherPowerUp();
                 powerUpCount = 0;
             }
@@ -264,6 +266,8 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
+    //Nuevo metodo agregado para el nuevo Power Up. Lo que hace es modificar el tamanio del jugador
+    //para hacerlo mas pequenio y hacer mas dificil que nos alcance un proyectil.
     private void AddAnotherPowerUp()
     {
         smallPlayer = true;

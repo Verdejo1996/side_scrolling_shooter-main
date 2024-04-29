@@ -14,6 +14,9 @@ public class Restart : MonoBehaviour
 
     private void GetInput()
     {
+        //Se modifico el orden en el que se ejecutan las instrucciones
+        //ya que el problema que me surgia, por lo menos a mi, era que al hacer un reset
+        //no se movia el jugador y el problema era con el orden del LoadScene y el Time.timeScale.
         if (Input.GetKeyDown(KeyCode.R))
         {
             Time.timeScale = 1;
@@ -22,6 +25,7 @@ public class Restart : MonoBehaviour
         }
     }
 
+    //Se agrego un nuevo metodo para resetear todos los parametros.
     private void Reset()
     {
         Controller_Player._Player.gameObject.SetActive(true);
